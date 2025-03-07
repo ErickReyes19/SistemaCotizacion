@@ -1,0 +1,30 @@
+﻿@model IEnumerable<SistemaCotizaciones.Models.Cliente>
+
+<h1>Lista de Clientes</h1>
+
+@if (Model == null || !Model.Any()) 
+{
+    <p>No hay clientes disponibles.</p>
+}
+else
+{
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Nombre</th>
+                <th>Identidad</th>
+                <th>Correo</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var cliente in Model)
+            {
+                <tr>
+                    <td>@cliente.Nombre</td>
+                    <td>@cliente.Identidad</td>
+                    <td>@cliente.Correo</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+}
